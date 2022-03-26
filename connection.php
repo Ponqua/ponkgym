@@ -1,7 +1,7 @@
 <?php
 
-
-$conn = mysqli_connect("localhost","root","","ponk_gym")
+// example connection
+$conn = mysqli_connect("host","user","password","databse")
           or die("Couldn't connect to the database");
 
 ?>

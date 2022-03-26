@@ -22,8 +22,9 @@ if (isset($_POST['signup_btn'])){
     }
 
     //user exists?
+    $ss = "ss";
     $stmt = $conn->prepare("SELECT id FROM users WHERE email = ? OR username = ?");
-    $stmt->bind_param("ss",$email,$username);
+    $stmt->bind_param($ss,$email,$username);
     $stmt->execute();
     $stmt->store_result();
 
@@ -34,9 +35,10 @@ if (isset($_POST['signup_btn'])){
 
     }
     else{
-
+        $sss="sss";
+        $md5password=md5($password);
         $stmt = $conn->prepare("INSERT INTO users (username,email,password) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss",$username,$email,md5($password));
+        $stmt->bind_param($sss,$username,$email,$md5password);
 
         //if user is created
         if($stmt->execute()){
