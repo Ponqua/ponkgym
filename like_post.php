@@ -23,7 +23,7 @@ if(isset($_POST['heart_btn'])){
     $stmt->execute();
     $stmt1->execute();
 
-    header('location: $_SERVER["PHP_SELF"]');
+    header('location: index.php');
 
 
 }else{
